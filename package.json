@@ -1,8 +1,8 @@
 {
-  "name": "@whiskeysockets/libsignal-wasm",
+  "name": "libsignal-wasm",
   "version": "2.0.2",
   "description": "Open Whisper Systems' libsignal for javascript",
-  "repository": "WhiskeySockets/libsignal-wasm",
+  "repository": "Sky-Mansion/libsignal-wasm",
   "type": "module",
   "main": "index.js",
   "types": "index.d.ts",

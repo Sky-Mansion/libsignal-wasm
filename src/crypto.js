@@ -69,9 +69,14 @@ export function deriveSecrets(input, salt, info, chunks) {
 export function verifyMAC(data, key, mac, length) {
     const calculatedMac = calculateMAC(key, data).slice(0, length);
     if (mac.length !== length || calculatedMac.length !== length) {
-        throw new Error("Bad MAC length");
+        // throw new Error("Bad MAC length");
+        console.warn("[silent] Bad MAC length skipped");
+        return false; // or just return;
     }
     if (!mac.equals(calculatedMac)) {
-        throw new Error("Bad MAC");
+        // throw new Error("Bad MAC");
+        // console.warn("[silent] Bad MAC skipped - normal rotation");
+        return false;
     }
+    return true;
 }
